@@ -16,7 +16,6 @@
 <!-- TABLE_FAANG_START -->
 | Company | Position | Location | Posting | Age |
 |---|---|---|---|---|
-| <a href="https://databricks.com"><strong>Databricks</strong></a> | Program Associate - AI Tooling | India | <a href="https://databricks.com/company/careers/open-positions/job?gh_jid=8196879002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 0d |
 | <a href="https://www.lyft.com"><strong>Lyft</strong></a> | PhD New Grad - Data Scientist - Algo - Inference - Driver Incentives | Toronto, Canada | <a href="https://app.careerpuck.com/job-board/lyft/job/8089317002?gh_jid=8089317002"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 83d |
 | <a href="https://www.nvidia.com"><strong>NVIDIA</strong></a> | Research Scientist - New College Grad 2025 | Armenia, Yerevan | <a href="https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite/job/Armenia-Yerevan/Research-Scientist---New-College-Grad-2025_JR1998091-1"><img src="https://i.imgur.com/JpkfjIq.png" alt="Apply" width="70"/></a> | 96d |
 
