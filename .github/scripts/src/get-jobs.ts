@@ -1,12 +1,16 @@
+import "dotenv/config";
 import * as fs from "fs";
 import * as path from "path";
+import { fileURLToPath } from "url";
 import * as core from "@actions/core";
-import dotenv from "dotenv";
 import { fetchJobCounts, fetchJobs } from "./queries";
 import { Job } from "./types/job.schema";
+import { JobCounts } from "./types/job-counts.schema";
 import { HEADERS, MARKERS, TABLES } from "./config";
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const APPLY_IMG_URL = process.env.APPLY_IMG_URL;
 
 function generateMarkdownTable(
@@ -82,11 +86,9 @@ function updateReadme(
   fs.writeFileSync(readmePath, readmeContent, "utf8");
 }
 
-async function updateCounts(filePath: string) {
+function updateCounts(filePath: string, jobCounts: JobCounts) {
   const readmePath = path.join(__dirname, filePath);
   let readmeContent = fs.readFileSync(readmePath, { encoding: "utf8" });
-
-  const jobCounts = await fetchJobCounts();
 
   readmeContent = readmeContent.replace(
     /(\[Internships :books:\]\(\/\))(\s+-\s+\*\*\d+\*\*\s+available)/,
@@ -108,11 +110,9 @@ async function updateCounts(filePath: string) {
   fs.writeFileSync(readmePath, readmeContent, { encoding: "utf8" });
 }
 
-async function updateTotalCount() {
+function updateTotalCount(jobCounts: JobCounts) {
   const readmePath = path.join(__dirname, "../../../README.md");
   let readmeContent = fs.readFileSync(readmePath, { encoding: "utf8" });
-
-  const jobCounts = await fetchJobCounts();
 
   const totalJobs =
     jobCounts.intern_usa_count +
@@ -130,6 +130,8 @@ async function updateTotalCount() {
 
 async function main() {
   try {
+    const jobCounts = await fetchJobCounts();
+
     for (const table of TABLES) {
       const faangJobs = await fetchJobs({
         ...table.query,
@@ -151,10 +153,10 @@ async function main() {
       };
 
       updateReadme(tables, table.path);
-      updateCounts(table.path);
+      updateCounts(table.path, jobCounts);
     }
 
-    updateTotalCount();
+    updateTotalCount(jobCounts);
   } catch (error) {
     if (error instanceof Error) {
       core.setFailed(error.message);

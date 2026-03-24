@@ -10,21 +10,17 @@ jobs:
     if: github.event.label.name == 'approved'
 
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v6
 
-      - name: Use Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "20"
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies
-        run: npm install
+        run: bun install
         working-directory: .github/scripts
 
       - name: Update or Add Job
-        run: npm run add-or-update-job
+        run: bun run add-or-update-job
         id: add_or_update_job
         working-directory: .github/scripts
         env:
@@ -35,7 +31,7 @@ jobs:
 
       - name: Get Jobs and Update Tables
         if: success()
-        run: npm run get-jobs
+        run: bun run get-jobs
         working-directory: .github/scripts
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -52,7 +48,7 @@ jobs:
 
       - name: Push changes
         if: success()
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main

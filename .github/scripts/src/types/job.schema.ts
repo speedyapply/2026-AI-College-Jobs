@@ -1,4 +1,4 @@
-import z from "zod";
+import { z } from "zod";
 
 const JobSchema = z.object({
   company_name: z.string(),

@@ -1,9 +1,8 @@
+import "dotenv/config";
 import * as core from "@actions/core";
 import * as github from "@actions/github";
-import dotenv from "dotenv";
 import { addNewJob, updateJob } from "./mutations";
 
-dotenv.config();
 const GIT_USER_NAME = process.env.GIT_USER_NAME;
 const GIT_USER_EMAIL = process.env.GIT_USER_EMAIL;
 

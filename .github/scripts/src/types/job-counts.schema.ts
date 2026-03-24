@@ -1,4 +1,4 @@
-import z from "zod";
+import { z } from "zod";
 
 export const JobCountsSchema = z.object({
   intern_usa_count: z.number(),

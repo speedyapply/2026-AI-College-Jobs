@@ -1,14 +1,4 @@
-import dotenv from "dotenv";
-import { createClient } from "@supabase/supabase-js";
-
-dotenv.config();
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_KEY = process.env.SUPABASE_KEY;
-
-const supabase =
-  SUPABASE_URL && SUPABASE_KEY
-    ? createClient(SUPABASE_URL, SUPABASE_KEY)
-    : null;
+import { supabase } from "./supabase";
 
 export async function addNewJob(
   jobUrl: string,
@@ -19,11 +9,7 @@ export async function addNewJob(
   type: "new_grad" | "intern",
   usa: boolean
 ) {
-  if (!supabase) {
-    throw new Error("Supabase client is not initialized.");
-  }
-
-  const { data, error } = await supabase.rpc("add_new_job", {
+  const { error } = await supabase.rpc("add_new_job", {
     _job_title: jobTitle,
     _job_url: jobUrl,
     _company_name: companyName,
@@ -48,11 +34,7 @@ export async function updateJob(
   usa: boolean | null,
   status: "active" | "inactive" | null
 ) {
-  if (!supabase) {
-    throw new Error("Supabase client is not initialized.");
-  }
-
-  const { data, error } = await supabase.rpc("update_job", {
+  const { error } = await supabase.rpc("update_job", {
     _job_url: jobUrl,
     _new_job_title: jobTitle,
     _new_company_name: companyName,

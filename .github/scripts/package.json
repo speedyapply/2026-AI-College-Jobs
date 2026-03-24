@@ -1,24 +1,25 @@
 {
   "name": "ai-college-jobs",
   "version": "1.0.0",
+  "type": "module",
   "description": "The most comprehensive AI internship & new graduate job list on GitHub.",
   "scripts": {
-    "build": "tsc",
-    "get-jobs": "tsc && node build/get-jobs.js",
-    "add-or-update-job": "tsc && node build/add-or-update-job.js"
+    "build": "tsc --noEmit",
+    "get-jobs": "bun src/get-jobs.ts",
+    "add-or-update-job": "bun src/add-or-update-job.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.10.5",
-    "typescript": "^5.3.3"
+    "@types/bun": "latest",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@actions/core": "^1.10.1",
-    "@actions/github": "^6.0.0",
-    "@supabase/supabase-js": "^2.39.1",
-    "dotenv": "^16.3.1",
-    "zod": "^3.22.4"
+    "@actions/core": "^3.0.0",
+    "@actions/github": "^9.0.0",
+    "@supabase/supabase-js": "^2.99.3",
+    "dotenv": "^16.4.5",
+    "zod": "^4.3.6"
   }
 }
