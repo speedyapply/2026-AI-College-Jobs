@@ -1,4 +1,4 @@
-## 2026 International AI Internships :books::globe_with_meridians:
+## 2027 International AI Internships :books::globe_with_meridians:
 
 ### USA Positions :eagle:
 - [Internships :books:](/) - **152** available ([FAANG+](/#faang), [Quant](/#quant), [Other](/#other))

@@ -1,4 +1,4 @@
-## 2026 International AI New Grad Positions :mortar_board::globe_with_meridians:
+## 2027 International AI New Grad Positions :mortar_board::globe_with_meridians:
 
 ### USA Positions :eagle:
 - [Internships :books:](/) - **152** available ([FAANG+](/#faang), [Quant](/#quant), [Other](/#other))
