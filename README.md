@@ -7,6 +7,8 @@
 
 This repository is a comprehensive list of AI/ML & Data Science jobs for college students in search of **internships** or **new graduate** positions. The positions are updated daily, and we prioritize jobs posted within the last 120 days.
 
+Canada-specific companion resource: [Hanzilla Jobs - Data, AI & ML roles](https://jobs.hanzilla.co/categories/data-ml/) is a free daily-updated board for Canadian students and recent grads looking for AI/ML, data, internship, co-op, new-grad, junior, and entry-level roles across Canada.
+
 ### USA Positions :eagle:
 - [Internships :books:](/) - **150** available ([FAANG+](#faang), [Quant](#quant), [Other](#other))
 - [New Graduate :mortar_board:](/NEW_GRAD_USA.md) - **247** available ([FAANG+](/NEW_GRAD_USA.md#faang), [Quant](/NEW_GRAD_USA.md#quant), [Other](/NEW_GRAD_USA.md#other))
